@@ -1,0 +1,20 @@
+
+@(loginForm:Form[User])(implicit flash:Flash,msg:Messages)
+@import helper._
+
+@views.html.main("Login"){
+<span class="label-success sr-only">@flash.get("create")</span>
+<span class="label-success sr-only">@flash.get("success")</span>
+  <span class="label-danger">@flash.get("invaliduser")</span></span>
+            @helper.form(action=routes.Application.submit){
+            @helper.inputText(loginForm("email"),'placeholder->"Email",'class->"form-control")
+            @helper.inputPassword(loginForm("password"),'placeholder->"Password",'class->"form-control")
+<center>
+    <input class= "btn btn-primary" type="submit" value="LogIn"/>
+    <br>
+    <a href="/forgotpassword "> Forgot Password? </a>
+
+
+</center>
+}
+}

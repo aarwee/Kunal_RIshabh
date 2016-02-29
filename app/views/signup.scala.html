@@ -1,0 +1,14 @@
+@(signupform:Form[(String,String,String)])(implicit flash:Flash , msg:Messages)
+@import helper._
+@views.html.main("SignUp"){
+
+<span class="label-success sr-only">@flash.get("mismatch")</span>
+    @helper.form(action=routes.Signup.create){
+    @helper.inputText(signupform("email"),'placeholder->"Email",'class->"form-control")
+    @helper.inputPassword(signupform("password"),'placeholder->"Password",'class->"form-control")
+    @helper.inputPassword(signupform("confirmpassword"),'placeholder->"Confirm Password",'class->"form-control")
+
+   <center> <input class= "btn btn-primary" type="submit" value="Submit"/></center>
+}
+
+}

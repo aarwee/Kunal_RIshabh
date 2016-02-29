@@ -1,0 +1,18 @@
+
+@(param: Any)(implicit flash:Flash,msg:Messages)
+@import helper._
+@views.html.main("Dashboard"){
+
+<span class="label-danger">@flash.get("password")</span>
+
+
+
+@helper.form(action=routes.Dashboard.logout){
+<center>  <input class= "btn btn-primary" type="submit" value="LogOut"/></center>
+}
+
+@helper.form(action=routes.ChangePassword.changepassword){
+
+<center>  <input class= "btn btn-primary" type="submit" value="Change Password"/></center>
+}
+}
